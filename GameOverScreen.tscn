@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TitleScreen/salirselec.png" type="Texture" id=1]
+[ext_resource path="res://TitleScreen/salirs.png" type="Texture" id=2]
+[ext_resource path="res://GameOver/jugar-selec.png" type="Texture" id=3]
+[ext_resource path="res://GameOver/jugar-export.png" type="Texture" id=4]
+[ext_resource path="res://GameOver/creditos.png" type="Texture" id=5]
+[ext_resource path="res://GameOver/creditoselec.png" type="Texture" id=6]
+[ext_resource path="res://GameOver/gameOver.png" type="Texture" id=7]
+[ext_resource path="res://GameOverScreen.gd" type="Script" id=8]
+[ext_resource path="res://Sounds/game_over_guitar.wav" type="AudioStream" id=9]
+
+[node name="GameOverScreen" type="Node"]
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 1.0
+margin_right = -2.0
+margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Sprite/MarginContainer"]
+margin_left = 79.0
+margin_right = 239.0
+margin_bottom = 88.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+
+[node name="TextureButton2" type="TextureButton" parent="Sprite/MarginContainer"]
+margin_left = 79.0
+margin_top = 24.0
+margin_right = 239.0
+margin_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+
+[node name="TextureButton3" type="TextureButton" parent="Sprite/MarginContainer"]
+margin_left = 79.0
+margin_top = 48.0
+margin_right = 239.0
+margin_bottom = 88.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource( 2 )
+texture_focused = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+[connection signal="pressed" from="Sprite/MarginContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Sprite/MarginContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Sprite/MarginContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]

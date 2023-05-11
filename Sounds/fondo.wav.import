@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fondo.wav-bc6178b250a1ea3bd5e3a1ae6917312f.sample"
+
+[deps]
+
+source_file="res://Sounds/fondo.wav"
+dest_files=[ "res://.import/fondo.wav-bc6178b250a1ea3bd5e3a1ae6917312f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
